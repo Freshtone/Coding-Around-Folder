@@ -1,35 +1,28 @@
 body {
     background-image: linear-gradient(to right , #0099ff , #004aac);
-}
-
-p   {
-} 
-
-.container {
-position: absolute;
-top: 10%;
-left: 50%;
-transform:  translate(-50%,50%);
-background: #2f3640;
-height: 80px;
-border-radius: 100px;
-padding: 10px;
+    user-select: none;
 }
 
 .div1 {
-    align-items: center;
-    font-size: 100%;
+    font-size: 150%;
     color: cornsilk;
 }
 
-button  {
-    color: white;
-    float: right;
-    width: 80px;
-    height: 80px;
-    border-radius: 80%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container   {
+    text-align: center;
+
 }
+
+            p   {
+            font-size: 140%;
+}
+
+            button  {
+            color: white;
+            float: none;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #2f3640;
+            align-items: center;
+}   
