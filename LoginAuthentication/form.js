@@ -30,24 +30,24 @@
 
     const promise = auth.signInWithEmailAndPassword(email.value, password.value);
     promise.catch(e => alert(e.message));
-
-    alert("Signed In As" + " " + email.value);
+    window.location = 'MVCindexRegUser.html';
   }
 
   function signOut()    {
       auth.signOut();
-      alert("Signed Out")
+      window.location = 'index.html';
   }
 
 
-  auth.onAuthStateChanged(function(user){
-        if(user)    {
-            var email = user.email;
-            alert("Active User " + email);
-            //is signed in
-        } else {
-            alert ("No Active User")
-            //no user is signed in
-        }
+  // auth.onAuthStateChanged(function(user){
+  //       if(user)    {
+  //           var email = user.email;
+  //           alert("Active User " + email);
+  //           window.location = 'MVCindexRegUser.html';
+  //           //is signed in
+  //       } else {
+  //           alert ("No Active User")
+  //           //no user is signed in
+  //       }
 
-  })
+  // })
