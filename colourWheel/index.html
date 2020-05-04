@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The basic colour Wheel</title>
+    <script src="model.js"></script>
+</head>
+<body>
+
+    <button id="blueBtn" onclick="changeColor('blue')">Blue</button>
+
+    <button id="yellowBtn" onclick="changeColor('yellow')">Yellow</button>
+
+    <button id="redBtn" onclick="changeColor('red')">Red</button>
+<br>
+<br>
+
+    <div id="outputDIV">
+
+    </div>
+
+    <script>
+            // Modell
+    let svgInnerHtml = document.getElementById("outputDIV");
+    let colorSquareOne;
+    let colorSquareTwo;
+    let clickCounter = 0;
+    let resultColor;
+
+            // View
+function show() {
+
+        svgInnerHtml.innerHTML = `
+    
+            <svg width="120" height="100">
+                <rect width="100" height="100" style= "${colorSquareOne}" />
+            </svg>
+
+            <svg width="160" height="100">
+                <rect width="100" height="100" style= "${colorSquareTwo}" />
+            </svg>
+
+            <svg id="outputSvg" width="300" height="100">
+            <rect width="100" height="100" style= "${resultColor}" />
+            </svg>
+
+            `;
+}
+show();
+
+        // Controller
+function changeColor(color)  {
+    clickCounter ++;
+    let blue = "fill:rgba(0, 0, 255, 100);stroke-width:2; stroke:rgb(0,0,0)";
+    let yellow = "fill:rgba(255, 255, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
+    let red = "fill:rgba(255, 0, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
+
+
+        if (clickCounter == 1) {
+            if (color == 'blue')    {
+                colorSquareOne = blue;
+            }
+            if (color == 'yellow')    {
+                colorSquareOne = yellow;
+            }
+            if (color == 'red')    {
+                colorSquareOne = red;
+            }
+        }
+
+        if (clickCounter == 2) {
+            if (color == 'blue')    {
+                colorSquareTwo = blue;
+            }
+            if (color == 'yellow')    {
+                colorSquareTwo = yellow;
+            }
+            if (color == 'red')    {
+                colorSquareTwo = red;
+            }
+        }
+
+        show();
+}
+    </script>
+</body>
+</html>
