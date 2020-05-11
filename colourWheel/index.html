@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The basic colour Wheel</title>
-    <script src="model.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="model.js"></script> -->
 </head>
+
 <body>
+
 
     <button id="blueBtn" onclick="changeColor('blue')">Blue</button>
 
     <button id="yellowBtn" onclick="changeColor('yellow')">Yellow</button>
 
     <button id="redBtn" onclick="changeColor('red')">Red</button>
+
+    <button id="results" onclick="resultColorFunction()">Results</button>
+
 <br>
 <br>
 
@@ -27,6 +33,7 @@
     let colorSquareTwo;
     let clickCounter = 0;
     let resultColor;
+ 
 
             // View
 function show() {
@@ -50,13 +57,17 @@ function show() {
 show();
 
         // Controller
+
+        let orange = "fill:rgba(255, 135, 15, 100);stroke-width:2; stroke:rgb(0,0,0)";
+        let purple = "fill:rgba(135, 15, 255, 100);stroke-width:2; stroke:rgb(0,0,0)";
+        let green = "fill:rgba(15, 255, 15, 100);stroke-width:2; stroke:rgb(0,0,0)";
+        let blue = "fill:rgba(0, 0, 255, 100);stroke-width:2; stroke:rgb(0,0,0)";
+        let yellow = "fill:rgba(255, 255, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
+        let red = "fill:rgba(255, 0, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
+
+
 function changeColor(color)  {
     clickCounter ++;
-    let blue = "fill:rgba(0, 0, 255, 100);stroke-width:2; stroke:rgb(0,0,0)";
-    let yellow = "fill:rgba(255, 255, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
-    let red = "fill:rgba(255, 0, 0, 100);stroke-width:2; stroke:rgb(0,0,0)";
-
-
         if (clickCounter == 1) {
             if (color == 'blue')    {
                 colorSquareOne = blue;
@@ -82,6 +93,40 @@ function changeColor(color)  {
         }
 
         show();
+}
+
+// function isCombination(one, two, color1, color2){
+//     return  ((one === color1 && two === color2) || (one === color1 && two === color1));
+// }
+
+
+// function resultColorFunction()  {
+//     if (isCombination(colorSquareOne, colorSquareTwo, blue, red)) {
+//         resultColor = purple;
+//     }
+//     else if (isCombination(colorSquareOne, colorSquareTwo, blue, yellow)) {
+//         resultColor = green;
+//     }   
+//     else if (isCombination(colorSquareOne, colorSquareTwo, red, yellow)) {
+//         resultColor = orange;
+//     }
+
+//     show();
+// }
+
+function resultColorFunction()  {
+    
+    if  ((colorSquareOne === blue && colorSquareTwo === red) || 
+        (colorSquareOne === red && colorSquareTwo === blue))
+                {resultColor = purple;}
+    
+    if ((colorSquareOne === blue && colorSquareTwo === yellow) || (colorSquareOne === yellow && colorSquareTwo === blue))
+    {resultColor = green;}
+
+    if ((colorSquareOne === yellow && colorSquareTwo === red) || (colorSquareOne === red && colorSquareTwo === yellow))
+    {resultColor = orange;}
+
+show();
 }
     </script>
 </body>
