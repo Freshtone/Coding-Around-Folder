@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vgo-Stasjonen Admin Side</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="JsScripts/Tests.js"></script>
+</head>
+<body>
+    <div class="admin_site">
+
+        <div id="adminHeader" class="header">
+
+        </div>
+
+        <div id="adminBtns" class="Buttons_left_side_admin">
+            <button onclick="adminTestEdit()" class="adminBtn">Tests</button><br>
+            <button onclick="adminUserEdit()" class="adminBtn">User Admin</button><br>
+            <button class="adminBtn">Chat</button><br>
+            <button class="adminBtn">Settings</button><br>
+            <button class="adminBtn">Weekplan</button><br>
+            <button class="adminBtn">Om oss</button><br>
+        </div>
+
+        <div id="workAreaDiv" class="workArea">
+
+
+        </div>
+    </div>
+    <script>
+
+function adminTestEdit() {
+workAreaDiv.innerHTML = `
+<div class="admin_test_preview_container">
+    <div id="dropdownKategoriesDiv" class="admin_tests_style_dropdown"> 
+ 
+        <select name="Kategori" id="kategori">
+            <option value="Søvn">Søvn</option>
+            <option value="Kosthold">Kosthold</option>
+            <option value="Fysisk Aktivitet">Fysisk Aktivitet</option>
+            <option value="Sosial Aktivitet">Sosial Aktivitet</option>
+            <option value="Økonomi">Økonomi</option>
+            <option value="Karrierveiledning og Utdanningsvalg">Karrierveiledning og Utdanningsvalg</option>
+        </select>
+    </div>
+
+    <div id="addQuestionsDiv">
+        
+    <input type="text" placeholder="Input Question Here">
+    <button>Add Question</button><br>
+
+    <input type="text" placeholder="Enter Answer Here">
+    <button>Add Answer</button>
+
+        <dl>
+            <dt>Question 1</dt>
+                <dd>- Answer 1</dd>
+                <dd>- Answer 2</dd>
+                <dd>- Answer 3</dd>
+                <dd>- Answer 4</dd>
+            <dt>Question 2</dt>
+                <dd>- Answer 1</dd>
+                <dd>- Answer 2</dd>
+                <dd>- Answer 3</dd>
+                <dd>- Answer 4</dd>
+            <dt>Question 3</dt>
+                <dd>- Answer 1</dd>
+                <dd>- Answer 2</dd>
+                <dd>- Answer 3</dd>
+                <dd>- Answer 4</dd>
+            </dl>
+            
+        </div>
+
+</div>` 
+
+}
+function adminUserEdit() {
+workAreaDiv.innerHTML = `                
+
+<div>
+                    <button>Add User</button>
+                    <button>Delete User</button>
+                    <button>Edit User</button>
+                    <button>Message User</button><br>
+                    <input id="inputValue" type="text" placeholder="Find Users">
+                    <p id="userSearchValue"></p>
+
+                    <table class ="table_user_admin">
+                        <tr>
+                            <th>User Id</th>
+                            <th>User Name</th> 
+                            <th>User Email</th>
+                            <th>Paid User</th>
+                        </tr>
+                        <tr>
+                            <td>1045</td>
+                            <td>Jamie</td>
+                            <td>Jamie@hotmail.com</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>5743
+                            <td>Martin</td>
+                            <td>Martin@hotmail.com</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>54325</td>
+                            <td>Aksel</td>
+                            <td>Aksel@hotmail.com</td>
+                            <td>Yes</td>
+                        </tr>
+                      </table>
+                </div>`
+            }
+    </script>
+</body>
+</html>

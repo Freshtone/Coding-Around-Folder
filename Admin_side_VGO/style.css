@@ -1,0 +1,42 @@
+.admin_site {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 0fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "header header header header" "Buttons_left_side_admin workArea workArea workArea" "Buttons_left_side_admin workArea workArea workArea";
+  }
+
+
+  
+.Buttons_left_side_admin {    
+    grid-area: Buttons_left_side_admin;
+    background-color: indigo;                               
+}
+  
+.header   { 
+    grid-area: header;
+    background-color: hotpink; 
+}
+  
+.workArea    { 
+    grid-area: workArea;
+    background-color: khaki;
+}
+
+.adminBtn:hover   {
+    background-color:grey;
+}
+
+.adminBtn {
+    margin: 10px 0 10px 10px;
+}
+
+.table_user_admin   {
+    width:100%
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
